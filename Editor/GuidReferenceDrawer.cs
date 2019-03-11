@@ -11,7 +11,10 @@ namespace HalfBlind.Attributes {
             var guid = prop.stringValue;
             var path = AssetDatabase.GUIDToAssetPath(guid);
             var currentObject = AssetDatabase.LoadAssetAtPath<Object>(path);
-            var result = EditorGUI.ObjectField(position, currentObject, objectType, false);
+            var oldColor = GUI.color;
+            GUI.color = Color.green;
+            var result = EditorGUI.ObjectField(position, ObjectNames.NicifyVariableName(prop.name), currentObject, objectType, false);
+            GUI.color = oldColor;
             prop.stringValue = result != null ? AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(result)) : string.Empty;
         }
     }
