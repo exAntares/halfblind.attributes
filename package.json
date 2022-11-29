@@ -1,11 +1,18 @@
 {
-    "name": "halfblind.attributes",
+    "name": "com.halfblind.attributes",
     "displayName": "HalfBlind Attributes",
     "version": "1.0.0",
     "unity": "2018.1",
     "description": "This package provides some attributes and attribute drawers",
     "keywords": ["Attributes", "Drawers"],
     "category": "Scripts",
+    "publishConfig":{
+        "registry": "https://npm.pkg.github.com/@exAntares"
+    },
+    "repository": {
+        "type":"git",
+        "url":"https://github.com/exAntares/halfblind.attributes.git"
+    },
     "dependencies": {
     }
 }
